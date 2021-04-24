@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Header from "./Header";
+import Header from './Header';
+import Products from './Products';
 import './App.css';
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 
@@ -27,6 +28,13 @@ function App() {
     <div className='App container'>
       <Router>
         <Header />
+        {productsArray.map((product, index) =>
+        <Products 
+          key={index}
+      
+          product={product}
+        />       
+        )}
       </Router>
     </div>
   )
